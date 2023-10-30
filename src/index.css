@@ -1,3 +1,10 @@
+@import url(http://weloveiconfonts.com/api/?family=entypo);
+
+* {
+  user-select: none;
+  font: 20px 'Agency FB', sans-serif;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,9 +12,18 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  height: 100%; 
+  overflow: hidden; 
+  background: #3b3d3f;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+
+[class*="entypo-"]:before {
+  font-family: 'entypo', sans-serif;
+  transition: 0.3s;
 }
