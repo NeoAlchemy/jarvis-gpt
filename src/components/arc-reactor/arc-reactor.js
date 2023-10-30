@@ -9,6 +9,11 @@ const ArcReactor = () => {
       command: 'peaches * please',
       callback: (verbiage) => setMessage(`${verbiage}`),
       matchInterim: false
+    },
+    {
+      command: 'abort',
+      callback: ({ resetTranscript }) => SpeechRecognition.abortListening(),
+      matchInterim: false
     }
   ]
   const {
@@ -19,7 +24,7 @@ const ArcReactor = () => {
   } = useSpeechRecognition({ commands });
 
   useEffect(() => {
-    SpeechRecognition.startListening({ continuous: true }) // Commands work on continuous being false
+    SpeechRecognition.startListening({ continuous: true, language: 'en-US' }) // Commands work on continuous being false
   }, []);
 
   if (!browserSupportsSpeechRecognition) {
